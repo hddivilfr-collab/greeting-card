@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Special Question Card ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+        }
+
+        #card {
+            background: white;
+            width: 80%;
+            max-width: 550px;
+            padding: 40px 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        h2 {
+            color: #ff4d6d;
+        }
+
+        p {
+            font-size: 20px;
+            color: #444;
+        }
+
+        button {
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 25px;
+            font-size: 17px;
+            cursor: pointer;
+            background: #ff4d6d;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .next {
+            background: #333;
+        }
+
+        #noButton {
+            position: absolute;
+        }
+
+        .heart {
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="card">
+
+    <div class="heart">💌 ❤️ 💌</div>
+
+    <h1>A Special Question Card</h1>
+
+    <p>Hey! I have some questions for you ❤️</p>
+
+    <button onclick="startCard()">START ❤️</button>
+
+</div>
+
+
+<script>
+
+let answers = {};
+
+
+/* START */
+
+function startCard() {
+
+    showQuestion1();
+
+}
+
+
+/* QUESTION 1 */
+
+function showQuestion1() {
+
+    document.getElementById("card").innerHTML = `
+
+        <h2>Question 1 ❤️</h2>
+
+        <p>What will you choose if I ask?</p>
+
+        <button onclick="selectAnswer('q1','Study')">
+            Study 📚
+        </button>
+
+        <button onclick="selectAnswer('q1','Music')">
+            Music 🎵
+        </button>
+
+        <p id="selected"></p>
+
+        <button id="next" class="next"
+        style="display:none;"
+        onclick="showQuestion2()">
+            NEXT ➜
+        </button>
+    `;
+}
+
+
+/* QUESTION 2 */
+
+function showQuestion2() {
+
+    document.getElementById("card").innerHTML = `
+
+        <h2>Question 2 ❤️</h2>
+
+        <p>What is your fav instrument?</p>
+
+        <button onclick="selectAnswer('q2','Guitar')">
+            Guitar 🎸
+        </button>
+
+        <button onclick="selectAnswer('q2','Ukulele')">
+            Ukulele 🎵
+        </button>
+
+        <p id="selected"></p>
+
+        <button id="next" class="next"
+        style="display:none;"
+        onclick="showQuestion3()">
+            NEXT ➜
+        </button>
+    `;
+}
+
+
+/* QUESTION 3 */
+
+function showQuestion3() {
+
+    document.getElementById("card").innerHTML = `
+
+        <h2>Question 3 ❤️</h2>
+
+        <p>Main tumhe kya keh kar bulata hu?</p>
+
+        <button onclick="selectAnswer('q3','Bhavv')">
+            Bhavv ❤️
+        </button>
+
+        <button onclick="selectAnswer('q3','Bhavvvv')">
+            Bhavvvv ❤️
+        </button>
+
+        <p id="selected"></p>
+
+        <button id="next" class="next"
+        style="display:none;"
+        onclick="showQuestion4()">
+            NEXT ➜
+        </button>
+    `;
+}
+
+
+/* QUESTION 4 */
+
+function showQuestion4() {
+
+    document.getElementById("card").innerHTML = `
+
+        <h2>Question 4 ❤️</h2>
+
+        <p>Pani puri kisko jyada pasand hai?</p>
+
+        <button onclick="selectAnswer('q4','Harsh')">
+            Harsh 😋
+        </button>
+
+        <button onclick="selectAnswer('q4','Bhavya')">
+            Bhavya 😋
+        </button>
+
+        <p id="selected"></p>
+
+        <button id="next" class="next"
+        style="display:none;"
+        onclick="showQuestion5()">
+            NEXT ➜
+        </button>
+    `;
+}
+
+
+/* QUESTION 5 */
+
+function showQuestion5() {
+
+    document.getElementById("card").innerHTML = `
+
+        <h2>Question 5 ❤️</h2>
+
+        <p>Jyada sundar kon dikhta hai?</p>
+
+        <button onclick="selectAnswer('q5','Harsh')">
+            Harsh 😎
+        </button>
+
+        <button onclick="selectAnswer('q5','Bhavya')">
+            Bhavya 😍
+        </button>
+
+        <p id="selected"></p>
+
+        <button id="next" class="next"
+        style="display:none;"
+        onclick="showQuestion6()">
+            NEXT ➜
+        </button>
+    `;
+}
+
+
+/* QUESTION 6 */
+
+function showQuestion6() {
+
+    document.getElementById("card").innerHTML = `
+
+        <h2>Question 6 ❤️</h2>
+
+        <p>Aakhri sawal ki taraf badhe?</p>
+
+        <button onclick="selectAnswer('q6','Yes')">
+            YES ❤️
+        </button>
+
+        <button onclick="selectAnswer('q6','No')">
+            NO 😏
+        </button>
+
+        <p id="selected"></p>
+
+        <button id="next" class="next"
+        style="display:none;"
+        onclick="showQuestion7()">
+            NEXT ➜
+        </button>
+    `;
+}
+
+
+/* QUESTION 7 */
+
+function showQuestion7() {
+
+    document.getElementById("card").innerHTML = `
+
+        <h2>Last Question ❤️</h2>
+
+        <p>Do you like me? ❤️</p>
+
+        <button onclick="yesClicked()">
+            YES ❤️
+        </button>
+
+        <button id="noButton"
+        onmouseover="moveNoButton()"
+        onclick="moveNoButton()">
+            NO 😏
+        </button>
+
+    `;
+}
+
+
+/* SAVE ANSWERS */
+
+function selectAnswer(question, answer) {
+
+    answers[question] = answer;
+
+    document.getElementById("selected").innerHTML =
+        "You chose: <b>" + answer + "</b> ❤️";
+
+    document.getElementById("next").style.display =
+        "inline-block";
+}
+
+
+/* NO BUTTON MOVES */
+
+function moveNoButton() {
+
+    let button = document.getElementById("noButton");
+
+    let maxX = window.innerWidth - 120;
+    let maxY = window.innerHeight - 60;
+
+    let x = Math.random() * maxX;
+    let y = Math.random() * maxY;
+
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+
+
+/* YES */
+
+function yesClicked() {
+
+    answers["q7"] = "YES";
+
+    document.getElementById("card").innerHTML = `
+
+        <div class="heart">❤️ ❤️ ❤️</div>
+
+        <h1>I KNEW IT! 😍</h1>
+
+        <p>Thank you for answering all my questions.</p>
+
+        <p><b>You finally clicked YES! ❤️</b></p>
+
+        <div class="heart">💖 💕 💗 💓 💘</div>
+
+    `;
+}
+
+</script>
+
+</body>
+</html>
